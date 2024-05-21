@@ -1,0 +1,32 @@
+:root {
+  --main-bg-color: #000;
+  --extra-bg-color: rgb(255, 255, 255);
+  --main-font-color: color: rgb(255, 255, 255);
+  --extra-font-color: color: rgb(0, 0, 0);
+  --accent-color: rgb(255, 0, 0);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
