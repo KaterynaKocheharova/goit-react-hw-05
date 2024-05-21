@@ -1,0 +1,9 @@
+.navigation-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.active {
+  color: var(--accent-color);
+}
