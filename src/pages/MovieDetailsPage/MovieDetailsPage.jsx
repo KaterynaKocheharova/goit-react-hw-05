@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import BackLink from "../../components/BackLink/BackLink";
 
@@ -43,6 +43,16 @@ const MovieDetailsPage = () => {
               ))}
             </ul>
           </div>
+          <h3>Additional information</h3>
+          <ul>
+            <li>
+              <Link to="movie-cast">Cast</Link>
+            </li>
+            <li>
+              <Link to="movie-reviews">Reviews</Link>
+            </li>
+          </ul>
+          <Outlet />
         </div>
       )}
     </>
