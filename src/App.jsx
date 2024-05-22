@@ -4,6 +4,8 @@ import Container from "./components/Container/Container";
 import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./pages/HomePage/HomePage";
 import Movies from "./pages/MoviesPage/MoviesPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
+import NotFound from "./pages/NotFound/NotFound";
 import "./App.css";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/movies" element={<Movies />}></Route>
+            <Route path="/:id" element={<MovieDetailsPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
       </Section>
