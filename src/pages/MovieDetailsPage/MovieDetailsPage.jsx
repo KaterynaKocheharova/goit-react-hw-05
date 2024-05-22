@@ -3,6 +3,7 @@ import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import BackLink from "../../components/BackLink/BackLink";
 
+// try - catch ???
 const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState(null);
   const { id } = useParams();

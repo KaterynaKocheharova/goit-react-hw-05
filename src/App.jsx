@@ -37,6 +37,7 @@ function App() {
 
 export default App;
 
+// чому запит іде 4 рази
 // Where to put header
 // try - catch?
 // check percentage calculation
