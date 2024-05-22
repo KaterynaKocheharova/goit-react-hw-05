@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
+import BackLink from "../../components/BackLink/BackLink";
 
 const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState(null);
   const { id } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state ?? "/";
 
   useEffect(() => {
     const getMovieById = async () => {
@@ -21,6 +24,7 @@ const MovieDetailsPage = () => {
     <>
       {movieData && (
         <div>
+          <BackLink to={backLinkHref}>Back to home</BackLink>
           <div>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
