@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 
@@ -6,12 +6,13 @@ const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState({});
   const { id } = useParams();
 
-  //   const getMovieById = async () => {
-  //     const movieData = await getMovieDetails(id);
-  //     setMovieData(movieData);
-  //   };
-
-  //   getMovieById();
+  useEffect(() => {
+    const getMovieById = async () => {
+      const movieData = await getMovieDetails(id);
+      setMovieData(movieData);
+    };
+    getMovieById();
+  }, [id]);
 
   const { title, release_date, popularity, overview, genres } = movieData;
 
