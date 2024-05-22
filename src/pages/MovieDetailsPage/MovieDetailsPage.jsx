@@ -2,18 +2,30 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import BackLink from "../../components/BackLink/BackLink";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 
-// try - catch ???
 const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const { id } = useParams();
   const location = useLocation();
   const backLinkHref = location.state ?? "/";
 
   useEffect(() => {
     const getMovieById = async () => {
-      const movieData = await getMovieDetails(id);
-      setMovieData(movieData);
+      setLoading(true);
+      setError(false);
+      try {
+        const movieData = await getMovieDetails(id);
+        setMovieData(movieData);
+      } catch (error) {
+        setError(error);
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
     getMovieById();
   }, [id]);
@@ -23,6 +35,8 @@ const MovieDetailsPage = () => {
 
   return (
     <>
+      {loading && <Loader />}
+      {error && <Error />}
       {movieData && (
         <div>
           <BackLink to={backLinkHref}>Back to home</BackLink>

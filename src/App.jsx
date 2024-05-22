@@ -13,24 +13,27 @@ import "./App.css";
 function App() {
   return (
     <>
+      {/* Add inside header */}
       <Section isHeader>
         <Container>
           <Navigation />
         </Container>
       </Section>
-      <Section>
-        <Container>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="movies/:id" element={<MovieDetailsPage />}>
-              <Route path="movie-cast" element={<MovieCast />} />
-              <Route path="movie-reviews" element={<MovieReviews />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Container>
-      </Section>
+      <main>
+        <Section>
+          <Container>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="movies/:id" element={<MovieDetailsPage />}>
+                <Route path="movie-cast" element={<MovieCast />} />
+                <Route path="movie-reviews" element={<MovieReviews />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Container>
+        </Section>
+      </main>
     </>
   );
 }

@@ -11,7 +11,6 @@ const Home = () => {
 
   useEffect(() => {
     const getMoviesData = async () => {
-      setMovies([]);
       setError(false);
       setLoading(true);
       try {
