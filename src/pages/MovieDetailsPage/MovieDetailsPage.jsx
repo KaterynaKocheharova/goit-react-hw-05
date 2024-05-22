@@ -6,12 +6,12 @@ const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState({});
   const { id } = useParams();
 
-  const getMovieById = async () => {
-    const movieData = await getMovieDetails(id);
-    setMovieData(movieData);
-  };
+  //   const getMovieById = async () => {
+  //     const movieData = await getMovieDetails(id);
+  //     setMovieData(movieData);
+  //   };
 
-  getMovieById();
+  //   getMovieById();
 
   const { title, release_date, popularity, overview, genres } = movieData;
 
