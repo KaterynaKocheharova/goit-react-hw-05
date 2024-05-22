@@ -21,7 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/movies" element={<Movies />}></Route>
-            <Route path="/:id" element={<MovieDetailsPage />} />
+            <Route path="movies/:id" element={<MovieDetailsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>

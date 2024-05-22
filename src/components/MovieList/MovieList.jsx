@@ -33,7 +33,7 @@ const MoviesList = () => {
       {loading && <Loader />}
       {movies.map(({ id, original_title }) => (
         <li key={id}>
-          <Link to={`${id}`} state={location}>
+          <Link to={`/movies/${id}`} state={location}>
             {original_title}
           </Link>
         </li>
