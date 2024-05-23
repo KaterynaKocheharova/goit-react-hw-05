@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 
 const MovieCast = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [movieCastData, setMovieCastData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,7 +16,7 @@ const MovieCast = () => {
       setLoading(true);
       setError(false);
       try {
-        const castData = await getMovieCast(id);
+        const castData = await getMovieCast(movieId);
         setMovieCastData(castData.data);
       } catch (error) {
         setError(error);
@@ -25,7 +25,7 @@ const MovieCast = () => {
       }
     };
     getCastData();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>
@@ -34,7 +34,9 @@ const MovieCast = () => {
       {movieCastData && movieCastData.cast.length > 0 && (
         <MovieCastList castData={movieCastData} />
       )}
-      {movieCastData && !movieCastData.cast.length && <p>No infomation about the cast</p>}
+      {movieCastData && !movieCastData.cast.length && (
+        <p>No infomation about the cast</p>
+      )}
     </>
   );
 };

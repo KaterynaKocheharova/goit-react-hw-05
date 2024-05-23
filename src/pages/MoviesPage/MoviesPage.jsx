@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getFilteredTrendingMoviesToday } from "../../movies-api";
 import MoviesSearchBar from "../../components/MoviesSearchBar/MoviesSearchBar";
-import MoviesList from "../../components/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 import Error from "../../components/Error/Error";
 import Loader from "../../components/Loader/Loader";
 
@@ -44,7 +44,7 @@ const MoviesPage = () => {
       {loading && <Loader />}
       {error && <Error />}
       {filteredMovies.length > 0 && !loading && (
-        <MoviesList movies={filteredMovies} />
+        <MovieList movies={filteredMovies} />
       )}
       {isEmptyAfterFetch && !loading && (
         <p>No movies found matching your query.</p>
@@ -58,3 +58,4 @@ export default MoviesPage;
 // revise homework criteria
 // check mentor's remarks
 // proofread my code
+// adjust styles to make the code readable

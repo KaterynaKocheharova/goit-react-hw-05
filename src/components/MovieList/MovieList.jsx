@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-const MoviesList = ({ movies }) => {
+const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
     <ul>
@@ -15,4 +15,4 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-export default MoviesList;
+export default MovieList;

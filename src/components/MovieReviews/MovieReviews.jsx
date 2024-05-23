@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 
 const MovieReviews = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [movieReviewsData, setMovieReviewsData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,7 +16,7 @@ const MovieReviews = () => {
     const getReviewsData = async () => {
       setLoading(true);
       try {
-        const reviewsData = await getMovieReviews(id);
+        const reviewsData = await getMovieReviews(movieId);
         const results = reviewsData.data.results;
         setMovieReviewsData(results);
         setIsEmptyAfterFetch(results.length === 0);
@@ -27,7 +27,7 @@ const MovieReviews = () => {
       }
     };
     getReviewsData();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>

@@ -9,16 +9,16 @@ const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { id } = useParams();
+  const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state ?? "/";
+  const backLinkHref = location.state ?? "/movies";
 
   useEffect(() => {
     const getMovieById = async () => {
       setLoading(true);
       setError(false);
       try {
-        const movieData = await getMovieDetails(id);
+        const movieData = await getMovieDetails(movieId);
         setMovieData(movieData);
       } catch (error) {
         setError(error);
@@ -28,7 +28,7 @@ const MovieDetailsPage = () => {
       }
     };
     getMovieById();
-  }, [id]);
+  }, [movieId]);
 
   const { title, release_date, popularity, overview, genres, poster_path } =
     movieData || {};
@@ -39,7 +39,7 @@ const MovieDetailsPage = () => {
       {error && <Error />}
       {movieData && (
         <div>
-          <BackLink to={backLinkHref}>Back to home</BackLink>
+          <BackLink to={backLinkHref}>Back</BackLink>
           <div>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -61,10 +61,10 @@ const MovieDetailsPage = () => {
           <h3>Additional information</h3>
           <ul>
             <li>
-              <Link to="movie-cast">Cast</Link>
+              <Link to="cast">Cast</Link>
             </li>
             <li>
-              <Link to="movie-reviews">Reviews</Link>
+              <Link to="reviews">Reviews</Link>
             </li>
           </ul>
           <Outlet />
