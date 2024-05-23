@@ -7,20 +7,19 @@ import Error from "../Error/Error";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [movieReviewsData, setMovieReviewsData] = useState([]);
+  const [movieReviewsData, setMovieReviewsData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [isEmptyAfterFetch, setIsEmptyAfterFetch] = useState(true);
 
   useEffect(() => {
     const getReviewsData = async () => {
       setLoading(true);
+      setError(null);
       if (!movieId) return;
       try {
         const reviewsData = await getMovieReviews(movieId);
         const results = reviewsData.data.results;
         setMovieReviewsData(results);
-        setIsEmptyAfterFetch(results.length === 0);
       } catch (error) {
         setError(error);
       } finally {
@@ -34,8 +33,10 @@ const MovieReviews = () => {
     <>
       {loading && <Loader />}
       {error && <Error error={error} />}
-      {isEmptyAfterFetch && !loading && <p>No reviews found</p>}
-      {movieReviewsData.length > 0 && (
+      {movieReviewsData && !movieReviewsData.length && !loading && (
+        <p>No reviews found</p>
+      )}
+      {movieReviewsData && movieReviewsData.length > 0 && (
         <MovieReviewsList reviewsData={movieReviewsData} />
       )}
     </>

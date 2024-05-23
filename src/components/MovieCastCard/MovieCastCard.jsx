@@ -1,4 +1,4 @@
-import { defaultPersonImg } from "../../default-props";
+
 
 const MovieCastCard = ({ castItemData: { character, name, profile_path } }) => (
   <div>
@@ -7,7 +7,7 @@ const MovieCastCard = ({ castItemData: { character, name, profile_path } }) => (
       src={
         profile_path
           ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-          : defaultPersonImg
+          : "https://loremflickr.com/g/320/240/person"
       }
       alt={`${name}`}
     />

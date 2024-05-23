@@ -33,11 +33,11 @@ const MovieCast = () => {
     <>
       {loading && <Loader />}
       {error && <Error error={error} />}
-      {movieCastData && movieCastData.cast.length > 0 && (
-        <MovieCastList castData={movieCastData} />
-      )}
       {movieCastData && !movieCastData.cast.length && (
         <p>No infomation about the cast</p>
+      )}
+      {movieCastData && movieCastData.cast.length > 0 && (
+        <MovieCastList castData={movieCastData} />
       )}
     </>
   );
