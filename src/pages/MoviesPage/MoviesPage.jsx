@@ -34,13 +34,13 @@ const MoviesPage = () => {
     getFilteredMovies();
   }, [searchParams, query]);
 
-  const handleQuery = (value) => {
+  const handleSubmit = (value) => {
     setSearchParams({ query: value });
   };
 
   return (
     <>
-      <MoviesSearchBar onSubmit={handleQuery} />
+      <MoviesSearchBar onSubmit={handleSubmit} />
       {loading && <Loader />}
       {error && <Error />}
       {filteredMovies.length > 0 && !loading && (

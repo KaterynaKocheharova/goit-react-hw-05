@@ -15,6 +15,7 @@ const MovieReviews = () => {
   useEffect(() => {
     const getReviewsData = async () => {
       setLoading(true);
+      if (!movieId) return;
       try {
         const reviewsData = await getMovieReviews(movieId);
         const results = reviewsData.data.results;
