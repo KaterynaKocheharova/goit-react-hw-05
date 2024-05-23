@@ -54,3 +54,7 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
+
+// revise homework criteria
+// check mentor's remarks
+// proofread my code
