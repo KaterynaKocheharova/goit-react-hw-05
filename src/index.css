@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --main-bg-color: #000;
   --extra-bg-color: rgb(255, 255, 255);
   --main-font-color: color: rgb(255, 255, 255);
@@ -11,7 +11,7 @@ body {
   background-color: var(--main-bg-color);
   color:rgb(255, 255, 255); 
   letter-spacing: 0.07em;
-}
+} */
 
 h1,
 h2,
