@@ -81,3 +81,4 @@ export default App;
 // try - catch?
 // check percentage calculation
 // check for empty reviews or cast
+// зробити безпосерднє повернення на фільки які ми тільки що шукали з деталей

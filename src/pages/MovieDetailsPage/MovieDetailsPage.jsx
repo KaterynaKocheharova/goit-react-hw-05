@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
+import { defaultMovieImg } from "../../default-props";
 import BackLink from "../../components/BackLink/BackLink";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
@@ -43,7 +44,11 @@ const MovieDetailsPage = () => {
           <BackLink to={backLinkHref}>Back</BackLink>
           <div>
             <img
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  : defaultMovieImg
+              }
               alt="Movie Poster"
             />
           </div>
