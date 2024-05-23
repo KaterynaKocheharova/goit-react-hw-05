@@ -40,7 +40,8 @@ function App() {
 
 export default App;
 
-// чому запит іде 4 рази
+// userScore
 // Where to put header
 // try - catch?
 // check percentage calculation
+// check for empty reviews or cast
