@@ -8,6 +8,7 @@ axios.defaults.headers.common["Authorization"] = accesToken;
 axios.defaults.headers.common["accept"] = "application/json";
 
 export const getTrendingMoviesToday = async () => {
+  console.log(axios.defaults);
   const res = await axios.get("/trending/movie/day", {
     params: {
       language: "en-US",
@@ -30,3 +31,11 @@ export const getMovieCast = async (id) => {
   const res = await axios.get(`${end_point}`);
   return res;
 };
+
+// export const getMovieReviews = async (id) => {
+//   const end_point = `/movie/${id}/credits?language=en-US`;
+//   const res = await axios.get(`${end_point}`);
+//   return res;
+// };
+
+// https://api.themoviedb.org/3/movie/movie_id/reviews
