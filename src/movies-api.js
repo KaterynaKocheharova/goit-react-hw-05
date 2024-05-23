@@ -38,7 +38,7 @@ export const getMovieReviews = async (id) => {
 };
 
 export const getFilteredTrendingMoviesToday = async (query) => {
-  const end_point = "/search/movie";
+  const end_point = "/search/movie?language=en-US";
   const res = await axios.get(end_point, {
     params: {
       query: query,

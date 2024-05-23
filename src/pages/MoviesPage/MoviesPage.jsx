@@ -54,6 +54,3 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
-
-// якщо не буде пустий масив, показувати що не знайдено фільмів за запитом
-// only English
