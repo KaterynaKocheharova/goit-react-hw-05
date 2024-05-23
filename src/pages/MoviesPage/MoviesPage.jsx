@@ -11,21 +11,24 @@ const MoviesPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isEmptyAfterFetch, setIsEmptyAfterFetch] = useState(false);
   const query = searchParams.get("query") ?? "";
 
   useEffect(() => {
     const getFilteredMovies = async () => {
       setError(false);
       setLoading(true);
+      setIsEmptyAfterFetch(false);
       try {
         if (!query) return;
         const filteredMoviesData = await getFilteredTrendingMoviesToday(query);
         setFilteredMovies(filteredMoviesData.data.results);
+        setIsEmptyAfterFetch(!filteredMoviesData.data.results.length);
       } catch (error) {
-        // setError(error);
+        setError(error);
         console.error(error);
       } finally {
-        // setLoading(false);
+        setLoading(false);
       }
     };
     getFilteredMovies();
@@ -40,7 +43,12 @@ const MoviesPage = () => {
       <MoviesSearchBar onSubmit={handleQuery} />
       {loading && <Loader />}
       {error && <Error />}
-      {filteredMovies.length > 0 && <MoviesList movies={filteredMovies} />}
+      {filteredMovies.length > 0 && !loading && (
+        <MoviesList movies={filteredMovies} />
+      )}
+      {isEmptyAfterFetch && !loading && (
+        <p>No movies found matching your query.</p>
+      )}
     </>
   );
 };
@@ -48,3 +56,4 @@ const MoviesPage = () => {
 export default MoviesPage;
 
 // якщо не буде пустий масив, показувати що не знайдено фільмів за запитом
+// only English
