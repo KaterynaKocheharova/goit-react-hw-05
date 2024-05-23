@@ -1,28 +1,3 @@
-// import { Suspense, lazy } from 'react';
-// import { Routes, Route } from 'react-router-dom';
-// import NotFound from '../pages/NotFound';
-// import { AppBar } from './AppBar';
-// import css from './App.module.css';
-
-// const Home = lazy(() => import('../pages/Home'));
-// const About = lazy(() => import('../pages/About'));
-// const ProductDetails = lazy(() => import('../pages/ProductDetails'));
-// const Products = lazy(() => import('../pages/Products'));
-// const Mission = lazy(() => import('./Mission'));
-// const Team = lazy(() => import('./Team'));
-// const Reviews = lazy(() => import('./Reviews')); - EXAMPLE - do the same with my codeimport { Suspense, lazy } from "react";
-// import { Routes, Route } from "react-router-dom";
-// import Section from "./components/Section/Section";
-// import Container from "./components/Container/Container";
-// import Navigation from "./components/Navigation/Navigation";
-// import HomePage from "./pages/HomePage/HomePage";
-// import MoviesPage from "./pages/MoviesPage/MoviesPage";
-// import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
-// import MovieCast from "./components/MovieCast/MovieCast";
-// import MovieReviews from "./components/MovieReviews/MovieReviews";
-// import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-// import "./App.css";
-
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Section from "./components/Section/Section";
@@ -71,14 +46,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* Add inside header */
-}
-
-// userScore
-// Where to put header
-// try - catch?
-// check percentage calculation
-// check for empty reviews or cast
-// зробити безпосерднє повернення на фільки які ми тільки що шукали з деталей

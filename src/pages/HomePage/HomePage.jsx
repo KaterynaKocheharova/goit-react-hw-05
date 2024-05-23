@@ -7,11 +7,11 @@ import MovieList from "../../components/MovieList/MovieList";
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getMoviesData = async () => {
-      setError(false);
+      setError(null);
       setLoading(true);
       try {
         const moviesData = await getTrendingMoviesToday();
@@ -25,6 +25,7 @@ const Home = () => {
     };
     getMoviesData();
   }, []);
+
   return (
     <>
       <h2>Trending Today</h2>

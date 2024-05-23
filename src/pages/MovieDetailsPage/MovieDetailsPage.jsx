@@ -10,7 +10,7 @@ import Error from "../../components/Error/Error";
 const MovieDetailsPage = () => {
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = location.state ?? "/movies";
@@ -18,7 +18,7 @@ const MovieDetailsPage = () => {
   useEffect(() => {
     const getMovieById = async () => {
       setLoading(true);
-      setError(false);
+      setError(null);
       try {
         const movieData = await getMovieDetails(movieId);
         setMovieData(movieData);

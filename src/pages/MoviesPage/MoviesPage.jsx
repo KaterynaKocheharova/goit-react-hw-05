@@ -15,10 +15,10 @@ const MoviesPage = () => {
   const query = searchParams.get("query") ?? "";
 
   useEffect(() => {
+    setLoading(true);
+    setError(false);
+    setIsEmptyAfterFetch(false);
     const getFilteredMovies = async () => {
-      setError(false);
-      setLoading(true);
-      setIsEmptyAfterFetch(false);
       try {
         if (!query) return;
         const filteredMoviesData = await getFilteredTrendingMoviesToday(query);
@@ -43,9 +43,7 @@ const MoviesPage = () => {
       <MoviesSearchBar onSubmit={handleSubmit} />
       {loading && <Loader />}
       {error && <Error />}
-      {filteredMovies.length > 0 && !loading && (
-        <MovieList movies={filteredMovies} />
-      )}
+      {filteredMovies.length > 0 && <MovieList movies={filteredMovies} />}
       {isEmptyAfterFetch && !loading && (
         <p>No movies found matching your query.</p>
       )}
