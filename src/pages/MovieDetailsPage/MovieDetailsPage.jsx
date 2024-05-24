@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
@@ -13,7 +13,7 @@ const MovieDetailsPage = () => {
   const [error, setError] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     const getMovieById = async () => {
@@ -41,7 +41,7 @@ const MovieDetailsPage = () => {
       {error && <Error />}
       {movieData && (
         <div>
-          <BackLink to={backLinkHref}>Back</BackLink>
+          <BackLink to={backLinkHref.current}>Back</BackLink>
           <div>
             <img
               src={
