@@ -6,6 +6,7 @@
 
 .active {
   color: var(--accent-color);
+  color: red;
 }
 
 /* Add inside header */
