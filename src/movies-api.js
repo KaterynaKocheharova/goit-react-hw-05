@@ -7,44 +7,47 @@ axios.defaults.baseURL = "https://api.themoviedb.org/3";
 axios.defaults.headers.common["Authorization"] = accesToken;
 axios.defaults.headers.common["accept"] = "application/json";
 
+const params = {
+  language: "en-US",
+};
+
 export const getTrendingMoviesToday = async () => {
   const res = await axios.get("/trending/movie/day", {
-    params: {
-      language: "en-US",
-    },
+    params,
   });
   return res.data;
 };
 
 export const getMovieDetails = async (id) => {
-  const res = await axios.get(`/movie/${id}?language=en-US`, {
-    params: {
-      language: "en-US",
-    },
+  const res = await axios.get(`/movie/${id}`, {
+    params,
   });
   return res.data;
 };
 
 export const getMovieCast = async (id) => {
-  const end_point = `/movie/${id}/credits?language=en-US`;
-  const res = await axios.get(`${end_point}`);
+  const end_point = `/movie/${id}/credits`;
+  const res = await axios.get(`${end_point}`, {
+    params,
+  });
   return res;
 };
 
 export const getMovieReviews = async (id) => {
-  const end_point = `/movie/${id}/reviews?language=en-US`;
-  const res = await axios.get(`${end_point}`);
+  const end_point = `/movie/${id}/reviews`;
+  const res = await axios.get(`${end_point}`, {
+    params,
+  });
   return res;
 };
 
 export const getFilteredTrendingMoviesToday = async (query) => {
-  const end_point = "/search/movie?language=en-US";
+  const end_point = "/search/movie";
   const res = await axios.get(end_point, {
     params: {
+      ...params,
       query: query,
     },
   });
   return res;
 };
-
-// How can I search movies based on all of the params
