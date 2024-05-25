@@ -18,8 +18,7 @@ const MovieCast = () => {
       if (!movieId) return;
       try {
         const castData = await getMovieCast(movieId);
-        console.log(castData);
-        setMovieCastData(castData.data);
+        setMovieCastData(castData.data.cast);
       } catch (error) {
         setError(error);
       } finally {
@@ -33,10 +32,10 @@ const MovieCast = () => {
     <>
       {loading && <Loader />}
       {error && <Error error={error} />}
-      {movieCastData && !movieCastData.cast.length && (
+      {movieCastData && !movieCastData && !loading && (
         <p>No infomation about the cast</p>
       )}
-      {movieCastData && movieCastData.cast.length > 0 && (
+      {movieCastData && movieCastData.length > 0 && (
         <MovieCastList castData={movieCastData} />
       )}
     </>

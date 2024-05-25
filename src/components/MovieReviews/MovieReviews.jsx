@@ -18,8 +18,7 @@ const MovieReviews = () => {
       if (!movieId) return;
       try {
         const reviewsData = await getMovieReviews(movieId);
-        const results = reviewsData.data.results;
-        setMovieReviewsData(results);
+        setMovieReviewsData(reviewsData.data.results);
       } catch (error) {
         setError(error);
       } finally {
