@@ -17,8 +17,8 @@ const MovieDetailsPage = () => {
 
   useEffect(() => {
     const getMovieById = async () => {
-      setLoading(true);
       setError(null);
+      setLoading(true);
       try {
         const movieData = await getMovieDetails(movieId);
         setMovieData(movieData);
@@ -32,7 +32,7 @@ const MovieDetailsPage = () => {
     getMovieById();
   }, [movieId]);
 
-  const { title, release_date, popularity, overview, genres, poster_path } =
+  const { title, release_date, vote_average, overview, genres, poster_path } =
     movieData || {};
 
   return (
@@ -54,7 +54,7 @@ const MovieDetailsPage = () => {
           </div>
           <div>
             <h2>{`${title} (${release_date})`}</h2>
-            <p>{`User score - ${parseInt(popularity)}%`}</p>
+            <p>{`User score - ${parseInt(vote_average * 10).toFixed(0)}%`}</p>
             <h3>Overview</h3>
             <p>{overview}</p>
             <h3>Genres</h3>
