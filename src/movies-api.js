@@ -51,3 +51,13 @@ export const getFilteredTrendingMoviesToday = async (query) => {
   });
   return res;
 };
+
+export const getAllGenres = async () => {
+  const end_point = "genre/movie/list";
+  const res = await axios.get(end_point, {
+    params: {
+      params,
+    },
+  });
+  return res;
+};
