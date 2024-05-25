@@ -10,20 +10,21 @@ const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
   import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+
 const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
 const MovieReviews = lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   return (
     <>
-      <Section isHeader>
-        <Container>
+      <header>
+        <Container isHeader>
           <Navigation />
         </Container>
-      </Section>
+      </header>
       <main>
         <Section>
           <Container>
