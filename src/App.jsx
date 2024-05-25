@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Section from "./components/Section/Section";
 import Container from "./components/Container/Container";
 import Navigation from "./components/Navigation/Navigation";
-import "./App.css";
+import css from "./App.module.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
@@ -20,8 +20,8 @@ const MovieReviews = lazy(() =>
 function App() {
   return (
     <>
-      <header>
-        <Container isHeader>
+      <header className={css.header}>
+        <Container>
           <Navigation />
         </Container>
       </header>

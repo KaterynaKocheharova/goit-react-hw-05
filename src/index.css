@@ -1,17 +1,31 @@
-/* :root {
+:root {
   --main-bg-color: #000;
   --extra-bg-color: rgb(255, 255, 255);
   --main-font-color: color: rgb(255, 255, 255);
   --extra-font-color: color: rgb(0, 0, 0);
   --accent-color: rgb(255, 0, 0);
+
+  /* DISTANCE */
+  --small-distance: 0.5rem;
+
+   /* FONT -SIZES */
+   --big-font-size: 35px;
+   }
+
+@media screen and (min-width: 700px) {
+  :root {
+    --big-font-size: 50px;
+  }
 }
+
+
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--main-bg-color);
   color:rgb(255, 255, 255); 
   letter-spacing: 0.07em;
-} */
+}
 
 h1,
 h2,

@@ -8,16 +8,14 @@ const Navigation = () => {
   };
 
   return (
-    <header>
-      <nav className={css["navigation-container"]}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/movies" className={buildLinkClass}>
-          Movies
-        </NavLink>
-      </nav>
-    </header>
+    <nav className={css["navigation-container"]}>
+      <NavLink to="/" className={buildLinkClass}>
+        Home
+      </NavLink>
+      <NavLink to="/movies" className={buildLinkClass}>
+        Movies
+      </NavLink>
+    </nav>
   );
 };
 

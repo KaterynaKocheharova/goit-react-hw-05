@@ -6,7 +6,18 @@
 
 .active {
   color: var(--accent-color);
-  color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: var(--small-distance);
 }
 
-/* Add inside header */
+.active::after {
+  display: block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
