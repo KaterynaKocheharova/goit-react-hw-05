@@ -1,7 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllGenres } from "../../movies-api";
-import GenresList from "../GenresList/GenresList";
+import Grid from "../Grid/Grid";
+import MovieListItem from "../MovieListItem/MovieListItem";
 
 const MovieList = ({ movies }) => {
   const [genres, setGenres] = useState([]);
@@ -15,26 +15,17 @@ const MovieList = ({ movies }) => {
     getGenres();
   }, []);
 
-  const location = useLocation();
-
   return (
-    <ul>
+    <Grid>
       {genres.length > 0 &&
-        movies.map(({ id, original_title, backdrop_path, genre_ids }) => {
+        movies.map((movie) => {
           return (
-            <li key={id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
-                alt=""
-              />
-              <Link to={`/movies/${id}`} state={location}>
-                {original_title}
-              </Link>
-              <GenresList ids={genre_ids} genres={genres} />
+            <li key={movie.id}>
+              <MovieListItem movie={movie} genres={genres} />
             </li>
           );
         })}
-    </ul>
+    </Grid>
   );
 };
 

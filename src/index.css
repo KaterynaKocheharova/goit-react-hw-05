@@ -7,6 +7,7 @@
 
   /* DISTANCE */
   --small-distance: 0.5rem;
+  --big-distance: 2.5rem;
 
    /* FONT -SIZES */
    --big-font-size: 35px;
@@ -15,6 +16,9 @@
 @media screen and (min-width: 700px) {
   :root {
     --big-font-size: 50px;
+
+    /* DISTANCE */
+    --big-distance: 5rem;
   }
 }
 
