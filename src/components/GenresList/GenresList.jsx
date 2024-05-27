@@ -1,3 +1,5 @@
+import css from "./GenresList.module.css";
+
 const GenresList = ({ ids, genres }) => {
   const genresArray = [];
   ids.forEach((genreId) => {
@@ -5,9 +7,11 @@ const GenresList = ({ ids, genres }) => {
     genresArray.push(...filteredGenres);
   });
   return (
-    <ul>
+    <ul className={css["genres-container"]}>
       {genresArray.map((genre) => (
-        <li key={genre.id}>{genre.name}</li>
+        <li className={css["genres-item"]} key={genre.id}>
+          {genre.name}
+        </li>
       ))}
     </ul>
   );

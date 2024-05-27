@@ -1,0 +1,15 @@
+.movie-image {
+  border-radius: var(--card-border-radius);
+  margin-bottom: var(--small-distance);
+}
+
+.movie-link {
+  display: inline-block;
+  font-size: var(--medium-font-size);
+  font-weight: 600;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+}

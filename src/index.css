@@ -10,11 +10,18 @@
   --big-distance: 2.5rem;
 
    /* FONT -SIZES */
-   --big-font-size: 35px;
+  --small-font-size: 10px;
+  --medium-font-size: 20px;
+  --big-font-size: 35px;
+
+  /* BORDER RADIUS */
+  --card-border-radius: 10px;
    }
 
 @media screen and (min-width: 700px) {
   :root {
+    --small-font-size: 15px;
+    --medium-font-size: 24px;
     --big-font-size: 50px;
 
     /* DISTANCE */
@@ -45,6 +52,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 img {

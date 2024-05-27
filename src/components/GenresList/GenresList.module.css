@@ -1,0 +1,15 @@
+.genres-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--small-distance);
+}
+
+.genres-item {
+  text-align: center;
+  padding: 8px;
+  border-radius: var(--card-border-radius);
+  background-color: var(--accent-color);
+  font-size: var(--small-font-size);
+}
