@@ -1,0 +1,13 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: var(--small-distance);
+  padding: var(--small-distance);
+  border: 3px solid rgb(255, 0, 0);
+  border-radius: var(--btn-border-radius);
+  margin-bottom: var(--small-distance);
+}
+
+.back-icon {
+  font-size: var(--medium-font-size);
+}

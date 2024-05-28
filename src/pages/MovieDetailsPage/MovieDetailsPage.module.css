@@ -1,0 +1,28 @@
+.card p {
+  font-size: var(--small-2-font-size);
+}
+
+.movie-poster-container {
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  margin-bottom: var(--small-distance);
+}
+
+.movie-poster-container img {
+  border-radius: var(--card-border-radius);
+}
+
+@media screen and (min-width: 600px) {
+  .flex-container {
+    display: flex;
+    column-gap: var(--medium-distance);
+    align-items: flex-start;
+  }
+}
+
+.main-info-card {
+  padding: var(--small-distance);
+  border-radius: var(--card-border-radius);
+  margin-bottom: var(--small-distance);
+}

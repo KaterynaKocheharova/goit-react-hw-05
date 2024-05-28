@@ -1,0 +1,13 @@
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--small-distance);
+}
+
+@media screen and (min-width: 600px) {
+  .flex-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--medium-distance);
+  }
+}
