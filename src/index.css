@@ -39,6 +39,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
   letter-spacing: 0.07em;
+  line-height: 1.5;
 }
 
 h1,
