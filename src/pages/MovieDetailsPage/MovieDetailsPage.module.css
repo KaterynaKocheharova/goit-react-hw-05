@@ -1,7 +1,3 @@
-.card p {
-  font-size: var(--small-2-font-size);
-}
-
 .movie-poster-container {
   width: 100%;
   border-radius: var(--card-border-radius);

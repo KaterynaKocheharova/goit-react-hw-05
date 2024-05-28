@@ -42,6 +42,10 @@ body {
   line-height: 1.5;
 }
 
+p {
+  font-size: var(--small-2-font-size);
+}
+
 h1,
 h2,
 h3,

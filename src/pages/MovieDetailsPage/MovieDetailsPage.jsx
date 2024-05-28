@@ -66,7 +66,9 @@ const MovieDetailsPage = () => {
                 <h3>Genres</h3>
                 <ul>
                   {genres.map(({ name, id }) => (
-                    <li key={id}>{name}</li>
+                    <li key={id}>
+                      <p> {name}</p>
+                    </li>
                   ))}
                 </ul>
               </FlexItem>
