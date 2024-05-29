@@ -12,12 +12,14 @@
 @media screen and (min-width: 600px) {
   .flex-container {
     display: flex;
+    justify-content: space-between;
     column-gap: var(--medium-distance);
     align-items: flex-start;
   }
 }
 
 .main-info-card {
+  width: 100%;
   padding: var(--small-distance);
   border-radius: var(--card-border-radius);
   margin-bottom: var(--small-distance);
