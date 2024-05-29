@@ -10,8 +10,8 @@
 
 @media screen and (min-width: 600px) {
   .back-link {
-    padding: var(--medium-distance);
-    column-gap: var(--medium-distance);
+    /* padding: var(--medium-distance);
+    column-gap: var(--medium-distance); */
     margin-bottom: var(--medium-distance);
   }
 }
