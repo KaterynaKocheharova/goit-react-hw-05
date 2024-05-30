@@ -6,7 +6,6 @@ import { defaultMovieImg } from "../../default-props";
 import BackLink from "../../components/BackLink/BackLink";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
-import FlexItem from "../../components/FlexItem/FlexItem";
 import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
