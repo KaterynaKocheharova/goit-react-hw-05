@@ -42,38 +42,40 @@ const MovieDetailsPage = () => {
       {loading && <Loader />}
       {error && <Error />}
       {movieData && (
-        <div className={css["card"]}>
+        <>
           <BackLink to={backLinkHref.current}>Back</BackLink>
-          <div className={css["flex-container"]}>
-            <div className={css["movie-poster-container"]}>
-              <img
-                src={
-                  poster_path
-                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                    : defaultMovieImg
-                }
-                alt="Movie Poster"
-              />
-            </div>
-            <div className={css["main-info-card"]}>
-              <FlexItem>
-                <h2>{`${title} (${release_date})`}</h2>
-                <p className={css["user-score-text"]}>{`User score - ${parseInt(
-                  vote_average * 10
-                ).toFixed(0)}%`}</p>
-                <h3>Overview</h3>
-                <p>{overview}</p>
-                <h3>Genres</h3>
-                <ul>
-                  {genres.map(({ name, id }) => (
-                    <li key={id}>
-                      <p> {name}</p>
-                    </li>
-                  ))}
-                </ul>
-              </FlexItem>
+          <div className={css["card-and-image-container"]}>
+            {/* <div className={css["image-container"]}> */}
+            <img
+              className={css["movie-image"]}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  : defaultMovieImg
+              }
+              alt="Movie Poster"
+            />
+            {/* </div> */}
+            <div className={css["card-container"]}>
+              <h2
+                className={css["main-title"]}
+              >{`${title} (${release_date})`}</h2>
+              <p className={css["user-score-text"]}>{`User score - ${parseInt(
+                vote_average * 10
+              ).toFixed(0)}%`}</p>
+              <h3 className={css["subtitle"]}>Overview</h3>
+              <p>{overview}</p>
+              <h3 className={css["subtitle"]}>Genres</h3>
+              <ul className={css["genre-list"]}>
+                {genres.map(({ name, id }) => (
+                  <li className={css["genre-item"]} key={id}>
+                    {name}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+
           <h3>Additional information</h3>
           <ul>
             <li>
@@ -87,7 +89,7 @@ const MovieDetailsPage = () => {
           <Suspense fallback={<div>Loading subpage</div>}>
             <Outlet />
           </Suspense>
-        </div>
+        </>
       )}
     </>
   );

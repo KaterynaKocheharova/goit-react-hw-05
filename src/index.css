@@ -14,6 +14,7 @@
   --small-font-size: 10px;
   --small-2-font-size: 14px;
   --medium-font-size: 20px;
+  --medium-2-font-size: 30px;
   --big-font-size: 35px;
 
   /* BORDER RADIUS */
@@ -21,11 +22,14 @@
   --btn-border-radius: 5px;
    }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
+
+  /* FONT-SIZES */
   :root {
     --small-font-size: 15px;
     --small-2-font-size: 18px;
     --medium-font-size: 24px;
+    --medium-2-font-size: 34px;
     --big-font-size: 50px;
 
     /* DISTANCE */
