@@ -44,7 +44,6 @@ const MovieDetailsPage = () => {
         <>
           <BackLink to={backLinkHref.current}>Back</BackLink>
           <div className={css["card-and-image-container"]}>
-            {/* <div className={css["image-container"]}> */}
             <img
               className={css["movie-image"]}
               src={
@@ -54,7 +53,6 @@ const MovieDetailsPage = () => {
               }
               alt="Movie Poster"
             />
-            {/* </div> */}
             <div className={css["card-container"]}>
               <h2
                 className={css["main-title"]}
@@ -75,13 +73,17 @@ const MovieDetailsPage = () => {
             </div>
           </div>
 
-          <h3>Additional information</h3>
-          <ul>
+          <h3 className={css["add-info-title"]}>Additional information</h3>
+          <ul className={css["add-info-flex"]}>
             <li>
-              <Link to="cast">Cast</Link>
+              <Link className={css["add-info-link"]} to="cast">
+                Cast
+              </Link>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <Link className={css["add-info-link"]} to="reviews">
+                Reviews
+              </Link>
             </li>
           </ul>
 

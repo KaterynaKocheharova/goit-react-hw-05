@@ -1,3 +1,7 @@
+.card-and-image-container {
+  margin-bottom: var(--medium-distance);
+}
+
 @media screen and (min-width: 700px) {
   .card-and-image-container {
     display: flex;
@@ -5,10 +9,6 @@
   }
 
   .card-container {
-    width: 100%;
-  }
-
-  .image-container {
     width: 100%;
   }
 
@@ -50,4 +50,41 @@
   background: var(--main-font-color);
   color: var(--main-bg-color);
   font-weight: 600;
+}
+
+.add-info-title {
+  font-size: var(--medium-2-font-size);
+  color: var(--main-font-color);
+  text-align: center;
+  margin-bottom: var(--medium-distance);
+}
+
+.add-info-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: var(--medium-distance);
+}
+
+.add-info-link {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 3px solid var(--accent-color);
+  border-radius: var(--btn-border-radius);
+  color: var(--main-font-color);
+  font-size: var(--medium-font-size);
+  font-weight: 700;
+  transition: border 250ms linear, color 250ms linear;
+  cursor: pointer;
+}
+
+.add-info-link:hover,
+.add-info-link:focus,
+.dd-info-link:active {
+  border: 3px solid var(--main-font-color);
+  border-radius: var(--btn-border-radius);
+  color: var(--accent-color);
 }
