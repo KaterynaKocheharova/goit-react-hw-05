@@ -10,3 +10,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .movie-cast-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
