@@ -8,7 +8,7 @@
   /* DISTANCE */
   --small-distance: 0.5rem;
   --medium-distance: 1.5rem;
-  --big-distance: 2.5rem;
+  --bigger-distance: 2.5rem;
 
    /* FONT -SIZES */
   --small-font-size: 10px;
@@ -67,6 +67,7 @@ ol {
 
 img {
   display: block;
+  object-fit: cover;
   max-width: 100%;
 }
 

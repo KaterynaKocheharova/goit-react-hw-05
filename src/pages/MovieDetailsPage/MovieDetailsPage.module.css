@@ -63,7 +63,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: var(--medium-distance);
+  gap: var(--medium-distance);
+  margin-bottom: 90px;
 }
 
 .add-info-link {

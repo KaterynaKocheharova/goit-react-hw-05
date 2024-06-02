@@ -1,7 +1,7 @@
 import css from "./MovieCastCard.module.css";
 
 const MovieCastCard = ({ castItemData: { character, name, profile_path } }) => (
-  <div>
+  <>
     <h3>{name}</h3>
     <div className={css["image-container"]}>
       <img
@@ -13,8 +13,12 @@ const MovieCastCard = ({ castItemData: { character, name, profile_path } }) => (
         alt={`${name}`}
       />
     </div>
-    <p>Character: {character}</p>
-  </div>
+    {character && (
+      <p>
+        <span className={css.character}>Character:</span> {character}
+      </p>
+    )}
+  </>
 );
 
 export default MovieCastCard;

@@ -1,13 +1,14 @@
 import MovieCastCard from "../MovieCastCard/MovieCastCard";
 import Grid from "../Grid/Grid";
+import Card from "../Card/Card";
 
 const MovieCastList = ({ castData }) => {
   return (
     <Grid isMovieCast>
       {castData.map((castItem) => (
-        <li key={castItem.id}>
+        <Card key={castItem.id} type="cast">
           <MovieCastCard castItemData={castItem} />
-        </li>
+        </Card>
       ))}
     </Grid>
   );

@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--medium-distance);
+}
+
+.cast-card {
+  max-width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: var(--small-distance);
+  border: 1px solid var(--main-font-color);
+  border-radius: var(--card-border-radius);
+  text-align: center;
+}

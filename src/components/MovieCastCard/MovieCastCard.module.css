@@ -1,12 +1,18 @@
 .image-container {
-  width: 100%;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
   height: 300px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
 }
 
 .image-container img {
-  object-fit: cover;
+  border-radius: var(--card-border-radius);
+}
+
+.character {
+  color: var(--accent-color);
 }
